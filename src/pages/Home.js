@@ -1,39 +1,40 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import React from 'react'
-import  Axios  from 'axios';
+import React, { Fragment } from 'react'
+import Axios from 'axios'
 import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const { user, isAuthenticated, isLoading} = useAuth0();
+    const { user } = useAuth0();
+    const [celebrity, setCelebrity] = useState([]);
 
-  const key = process.env.REACT_APP_KEY;
-  const headers = {
-    'X-Api-Key': key
-  }
+    const key = process.env.REACT_APP_KEY;
+    const headers = {
+      'X-Api-Key': key
+    }
+    
+    const nombre ='Michael Jordan'; 
+    const url =process.env.REACT_APP_URL+nombre;
+    useEffect(()=>{ 
+      Axios.get(url, {headers})
+      .then(res=>{console.log(res.data) 
+       setCelebrity(res.data)
+       console.log(celebrity)})
+      .catch(error=>{console.log(error)})
+    },[])
 
-  const nombre = 'Michael Jordan'
-  const url = process.env.REACT_APP_URL+nombre;
-
-  useEffect(() => {
-    Axios.get(url, {headers})
-    .then(res => {console.log(res.data)})
-    .catch(error => {console.log(error)})
-  },[])
-/*
-  if ( isLoading ) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    isAuthenticated && (
+    return(
+      <div>
+        <h2>{user.name}</h2>
         <div>
-            <img src={user.picture} alt={user.name} />
-            <h2>{user.name}</h2>
-            <p>Email: {user.email}</p>
-        </div>
+        {celebrity.map(cel=>{return(
+          <Fragment>
+          <h4>{cel.name}</h4>
+          <h3>{cel.age}</h3>
+          </Fragment>
+        )})}
+        </div>  
+      </div>
     )
-  )*/
 }
 
-export default Home
-
+export default Home;

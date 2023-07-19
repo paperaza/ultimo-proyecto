@@ -29,12 +29,12 @@ const Home = () => {
     <div>
       <h2>{user.name}</h2>
       <div>
-        {emoji.map(cel => {
+        {emoji.map(emo => {
           return (
             <S.ContentCharacter>
               <Fragment>
-                <h4>{cel.name}</h4>
-                <img src={cel.image} alt="emoji"/>
+                <h4>{emo.name}</h4>
+                <img src={emo.image} alt="emoji"/>
               </Fragment>
             </S.ContentCharacter>
           )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import * as S from './Home.styles'
 
 const Favorites = () => {
 
@@ -10,6 +11,7 @@ const Favorites = () => {
         <>
             <div>Listado de Favoritos</div>
             <table>
+
                 <thead>
                     <tr>
 
@@ -25,11 +27,13 @@ const Favorites = () => {
                     {celebrities_List.map(c => {
                         return (
                             <tr>
-
-                                <td scope='row'>{c.birthday}</td>
-                                <td scope='row'>{c.name}</td>
-                                <td scope='row'>{c.nationality}</td>
-                                <td scope='row'>{c.age}</td>
+                                
+                                <S.ContentCharacter>
+                                    <td scope='row'>{c.birthday}</td>
+                                    <td scope='row'>{c.name}</td>
+                                    <td scope='row'>{c.nationality}</td>
+                                    <td scope='row'>{c.age}</td>
+                                </S.ContentCharacter>
 
                             </tr>
                         )

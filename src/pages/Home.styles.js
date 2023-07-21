@@ -9,3 +9,45 @@ export const ContentCharacter = styled.div`
   margin: 10px;
   &:hover{filter:brightness(40%)};//aca hacemios sombra cuando pasa el cursor
 `;
+
+export const ContainerButtonAf = styled.div`
+width: 100%;
+text-align: center;
+
+`;
+
+export const ContainerItems = styled.div`
+    display: flex;
+    align-items: center;
+
+    p{
+        cursor: pointer;
+        padding: 0 13px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px){
+        display: ${(props) => (props.showMenuBurger ? "inline-grid" : "none")}; 
+        position: absolute;
+        top: 100px;
+        padding: 10px 0 20px 0;
+        width: 100%;
+        left: 0;
+
+        a{
+            padding: 10px 20px;
+        }
+    }
+ `;
+
+export const ContainerNavBar = styled.div`
+max-width: 100vw;
+height: 100px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 20px;
+
+`;

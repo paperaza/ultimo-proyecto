@@ -6,6 +6,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   
-    background-color: #A9CCE3 ;/*Color del fondo de todo el body*/
+    background-color: #f1f1f1 ;/*Color del fondo de todo el body*/
     
   }
+
+  #imagen{
+    width: 600px;
+  }
+
+ 

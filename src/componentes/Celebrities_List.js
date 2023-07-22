@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { removeCel, setCel } from '../reducers/slices/celSlices';
 import * as S from '../pages/Home.styles'
 import * as stile from '../auth/Log.styles'
+import "../index.css"
 
 const Celebrities_List = ({ celebrities }) => {
 
@@ -26,7 +27,7 @@ const Celebrities_List = ({ celebrities }) => {
     return (
         <Fragment>
             <div>Celebrities_List</div>
-            <div> {celebrities.map(c => {
+            <div id="conten"> {celebrities.map(c => {
                 return (
                     <div>
                         <S.ContentCharacter>

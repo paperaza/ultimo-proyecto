@@ -6,23 +6,38 @@ import { Link, Route, Routes } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import SearchBar from "./componentes/SearchBar";
 import * as S from './pages/Home.styles'
+import { Container } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 function App() {
 
   const { isAuthenticated } = useAuth0();
 
   return (
+
+
     <div className="App">
       <header className="App-header">
 
         {isAuthenticated ? (//? si autentica lleveme al home 
-          <><S.ContainerNavBar>
-            <nav>
-              <Link to="/favorites">Favoritos</Link>
-              <Link to="/home">Home</Link>
-              <Link to="/logout">Logout</Link>
-            </nav>
-          </S.ContainerNavBar></>
+       
+            <S.ContainerNavBar>
+
+        
+                <Navbar bg="dark" data-bs-theme="dark">
+                  <Container>
+                  <Nav className="me-auto">
+                    <Nav.Link href="/favorites">Favoritos</Nav.Link>
+                    <Nav.Link href="/home">Home</Nav.Link>
+                    <Nav.Link href="/logout">Logout</Nav.Link>
+                    </Nav>
+                  </Container>
+                </Navbar>
+             
+
+            </S.ContainerNavBar>
+        
         ) : (//: si no autentica qudese en el Login
           <Login />
         )}
@@ -35,6 +50,8 @@ function App() {
         <Route path="/logout" element={<Logout />} />
       </Routes>
     </div>
+
+
   );
 }
 

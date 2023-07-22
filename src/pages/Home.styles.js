@@ -42,12 +42,12 @@ export const ContainerItems = styled.div`
  `;
 
 export const ContainerNavBar = styled.div`
-max-width: 100vw;
+width: 500px;
 height: 100px;
 
-display: flex;
+display: flow;
 align-items: center;
 justify-content: space-between;
-padding: 0 20px;
+padding: 20px 20px 20px;
 
 `;

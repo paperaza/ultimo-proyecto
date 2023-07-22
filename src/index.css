@@ -14,4 +14,12 @@ body {
     width: 600px;
   }
 
+  body, .nav, .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
  
+/*#conten{
+  display: flex;
+}*/
